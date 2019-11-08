@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <StartupObject>Program</StartupObject>
+    <StartupObject>api.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
