@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace api.Controllers
 {
+    [Route("api/[controller]")]
     public class NotesController : Controller
     {
-        [HttpGet("siebel/notes")]
+        //[HttpGet("siebel/notes")]
         public string Get()
         {
             return "Recieving!";
