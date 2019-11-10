@@ -24,4 +24,4 @@ RUN dotnet publish ./api.csproj -o /publish
 FROM microsoft/aspnetcore:2 
 COPY --from=0 /publish /publish
 WORKDIR  /publish
-ENTRYPOINT [ "dotnet", "Api.dll" ]
+ENTRYPOINT [ "dotnet", "api.dll" ]
