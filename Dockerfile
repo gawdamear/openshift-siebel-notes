@@ -4,8 +4,8 @@ WORKDIR /notesapi
 
 # restore using solution file
 #COPY Api/Api.csproj ./Api/ 
-COPY api.csproj ./api/ 
-RUN dotnet restore api.csproj
+COPY /api.csproj ./api/ 
+RUN dotnet restore /api.csproj
 #COPY UnitTests/UnitTests.csproj ./UnitTests/
 #RUN dotnet restore UnitTests/UnitTests.csproj
 
@@ -19,7 +19,7 @@ COPY . .
 #RUN dotnet test UnitTests/UnitTests.csproj --test-adapter-path:. --logger:xunit
 
 # publish
-RUN dotnet publish api.csproj -o /publish
+RUN dotnet publish /api.csproj -o /publish
 
 # runtime stage
 FROM microsoft/aspnetcore:2 as runtime-image
