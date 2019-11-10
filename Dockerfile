@@ -5,7 +5,7 @@ WORKDIR /notesapi
 # restore using solution file
 #COPY Api/Api.csproj ./Api/ 
 COPY ./api.csproj ./api/ 
-RUN dotnet restore /api.csproj
+RUN dotnet restore api.csproj
 #COPY UnitTests/UnitTests.csproj ./UnitTests/
 #RUN dotnet restore UnitTests/UnitTests.csproj
 
