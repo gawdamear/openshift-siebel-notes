@@ -1,5 +1,5 @@
 # Build Stage
-FROM microsoft/aspnetcore-build:2 
+FROM microsoft/aspnetcore-build:2 as build-env
 WORKDIR /notesapi
 
 #COPY Api/Api.csproj ./Api/ 
@@ -22,6 +22,6 @@ RUN dotnet publish ./api.csproj -o /publish
 
 # runtime stage
 FROM microsoft/aspnetcore:2 
-COPY --from=0 /publish /publish
+COPY --from=build-env /publish /publish
 WORKDIR  /publish
 ENTRYPOINT [ "dotnet", "api.dll" ]
